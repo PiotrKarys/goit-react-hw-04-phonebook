@@ -29,6 +29,8 @@ const ContactForm = ({ onSubmit }) => {
         <input
           type="text"
           name="name"
+          pattern=".*[a-zA-Z].*"
+          title="Name must contain at least one letter"
           required
           value={name}
           onChange={handleChange}
@@ -39,7 +41,7 @@ const ContactForm = ({ onSubmit }) => {
         <input
           type="tel"
           name="number"
-          pattern="^\+?[0-9]+$"
+          pattern="^\+?[0-9\-]+$"
           title="Phone number must be digits and can start with +"
           required
           value={number}
